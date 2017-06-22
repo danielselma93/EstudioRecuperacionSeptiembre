@@ -22,6 +22,7 @@ public class ControldeUsuarios {
 	private int [] rangoEdades = {18,19,20,21,22,23,24,25,26,27,28,29,30};
 	private JComboBox comboBox;
 	private JButton btnInsertarDatos;
+	private JButton btnBorrador;
 	
 	public ControldeUsuarios() {
 		initialize();
@@ -64,6 +65,11 @@ public class ControldeUsuarios {
 		}
 		
 		cu.insertarLosDatos(btnInsertarDatos, textApellido, textNombre, comboBox, rangoEdades);
+		
+		btnBorrador = new JButton("BorrarRegistros");
+		frame.getContentPane().add(btnBorrador);
+		cu.goTo(btnBorrador, frame);
+		
 	}
 
 }

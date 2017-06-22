@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.swing.JTextField;
+
 import Modelo.BD;
 import Modelo.Usuario;
 
@@ -85,4 +87,17 @@ public class ControladorConsultas {
 			
 		}
 		}
+	public void borrarRegistro (String nombre){
+		BD bd = new BD();
+		
+		Connection cn = bd.Conectar();
+		try{
+			PreparedStatement ps = cn.prepareStatement("DELETE FROM usuario WHERE nombre=(?)");
+			ps.setString(1, nombre);
+			ps.execute();
+		}catch(SQLException e){
+			
+		}
+		 
+	}
 	}

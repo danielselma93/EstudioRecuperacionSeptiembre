@@ -5,8 +5,10 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.JTextField;
-import Controlador.ControladorConsultas;
+
+import Vista.BorrarRegistros;
 
 public class ControladorUsuarios {
 
@@ -25,5 +27,14 @@ public class ControladorUsuarios {
 			cc.insertarDatos(nombre, apellido, edad);
 		}
 	});
+	}
+	public void goTo (JButton btnBorrador, JFrame frame){
+		btnBorrador.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				BorrarRegistros window = new BorrarRegistros();
+				window.frame.setVisible(true);
+			}
+		});
 	}
 }
